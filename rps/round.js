@@ -29,6 +29,18 @@ class Round{
     getComputerSelection() {
         //*********************************ADD CODE HERE *************************************/
         // Use Math.floor and select a random Selections enumerator from above 
+        let computerSelection = Math.floor(Math.random() * 4);
+
+        switch (computerSelection) {
+
+            case 1: return Selections.ROCK;
+                    break;
+            case 2: return Selections.PAPER;
+                    break;
+            case 3: return Selections.SCISSORS;
+                    break;
+
+        }
     }
 
     /**
@@ -40,10 +52,51 @@ class Round{
     determineWinner() {
         //*********************************ADD CODE HERE *************************************/
         // Use this.playerSelection and this.computerSelection to return the appropriate outcome from the Outcomes enumerator above.
+
+        switch (this.playerSelection) {
+
+            case "rock": if (this.computerSelection == "scissors") {
+                                
+                            return Outcomes.PLAYER_WINS;
+
+                        } else if (this.computerSelection == "paper"){
+
+                            return Outcomes.COMPUTER_WINS;
+
+                        } else {
+
+                            return Outcomes.TIE;
+
+                        }
+            case "paper": if (this.computerSelection == "rock") {
+                            
+                            return Outcomes.PLAYER_WINS;
+
+                        } else if (this.computerSelection == "scissors") {
+
+                            return Outcomes.COMPUTER_WINS;
+
+                        } else {
+
+                            return Outcomes.TIE;
+
+                        }
+            case "scissors": if (this.computerSelection == "paper") {
+
+                                return Outcomes.PLAYER_WINS;
+
+                            } else if (this.computerSelection == "rock"){
+
+                                return Outcomes.COMPUTER_WINS;
+
+                            } else {
+
+                                return Outcomes.TIE;
+
+                            }
+
+        }
     }
-
-
-
 }
 
 
