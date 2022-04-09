@@ -1,4 +1,4 @@
-class Game{
+class Game {
     constructor(){
         this.numberOfRounds = null;
         this.countOfPlayerWins = 0;
@@ -8,27 +8,34 @@ class Game{
     incrementPlayerWins(){
         //*********************************ADD CODE HERE *************************************/
         // Add 1 to the countOfPlayerWins property
+        this.countOfPlayerWins += 1;
     }
 
     incrementComputerWins(){
         //*********************************ADD CODE HERE *************************************/
         // Add 1 to the countOfComputerWins property
+        this.countOfComputerWins += 1;
     }
 
     incrementCountOfTies(){
         //*********************************ADD CODE HERE *************************************/
         // Add 1 to the countOfTies property
+        this.countOfTies += 1;
     }
-
 
     setNumberOfRounds(numberOfRounds){
         //*********************************ADD CODE HERE *************************************/
         // Set the numberOfRounds property to the parameter
+        this.numberOfRounds = numberOfRounds;
     }
 
     newGame(){
         //*********************************ADD CODE HERE *************************************/
         // Clear all properties to their default values
+        this.numberOfRounds = null;
+        this.countOfPlayerWins = 0;
+        this.countOfComputerWins = 0;
+        this.countOfTies = 0;
     }
 
      /**
@@ -38,6 +45,15 @@ class Game{
      isNumberOfRoundsValid(num) {
         //*********************************ADD CODE HERE *************************************/
         // return a boolean value that shows if the parameter is a valid user input (A number from 1 - 5)
+        if (stringContainsNumber(num) && num > 0 && num <= 5) {
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
     }
 }
 
